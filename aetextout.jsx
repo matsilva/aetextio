@@ -1,4 +1,5 @@
 ﻿{
+    //There is no undo group since this only effects files external to After Effects.
     var TextOut = new Object;
     TextOut.allText = new Array;
     TextOut.fileName = (function() {
