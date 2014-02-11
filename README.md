@@ -5,4 +5,5 @@ Used to import/export comma separated text files via After Effects. Good for mas
 
 Run scripts using File > Scripts > aetextout.jsx     or     aetextin.jsx
 
-**aetextout.jsx**
+aetextout.jsx
+========
