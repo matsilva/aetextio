@@ -6,6 +6,7 @@
                 ? "/Desktop/aetextio/textout textout.txt"
                 : ($.os.osName.match(/Mac/) ? "~/Desktop/aetextio/textout textout.txt" : "aetextio/textout textout.txt");
     })();
+
     TextOut.start = function(callback) {
         for (var i = 1; i <= app.project.numItems; i++) {
             if (app.project.item(i) instanceof TextItem) {
@@ -14,8 +15,8 @@
         }
         callback(TextOut.allText);
     };
-    TextOut.writeFile = function(textArray) {
 
+    TextOut.writeFile = function(textArray) {
         //Get destination via save dialog, then write it out
         var joinText = textArray.join(",");
         var initFile = new File(TextOut.fileName);
