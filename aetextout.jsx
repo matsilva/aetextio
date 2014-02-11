@@ -1,4 +1,23 @@
 ﻿{
+    
+    var TextOut = new Object;
+    TextOut.allText = new Array;
+    TextOut.fileName = null;
+    TextOut.path = null;
+    TextOut.getAllText = (function(){
+        //iterate through project and store into array
+        //return array
+        for(var i = 1; i <= app.project.numItems; i++){
+            if(app.project.item(i) instanceof TextItem){
+                TextOut.allText.push(app.project.item(i).sourceText);
+            }
+        }
+    })();
+    TextOut.writeFile = function(){
+        //Get destination via save dialog, then write it out
+        var _joinText = TextOut.allText.join(",");
+        
+    };
     // export text to a txt file
     function exportAsTxt () {
         // generate heading
