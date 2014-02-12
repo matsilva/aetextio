@@ -9,7 +9,7 @@ aetextout.jsx
 ========
 This script will export all of your text layer values to a csv(comma separated value text file), in order. From here you can replace values with what ever you would like.... when you are done, run the aetextin.jsx script.
 
-The output file path will be `Desktop/aetextio/textout textout.txt`
+The output file path will be `Desktop/aetextio/ textfile.txt`
 
 aetextin.jsx
 ========
