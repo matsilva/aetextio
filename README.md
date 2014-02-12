@@ -16,4 +16,4 @@ aetextin.jsx
 This script will import your updated csv text file and replace the text layers with the corresponing data.
 You can undo via `ctr+z` Windows or `cmd+z` Mac.
 
-**Additional Info** - Commas will be escaped using a `\` when exporting text. They will also be escaped when importing if the by using `\` before the comma. So the correct syntax for an escaped comma would be `\,`.
+**Additional Info** - Commas will be escaped using a `\` when exporting text. They will also be escaped while importing by using `\` before the comma. So the correct syntax for an escaped comma would be `\,`.
