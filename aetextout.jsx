@@ -14,7 +14,7 @@
             if (app.project.item(i) instanceof CompItem) {
                 for (var j = 1; j <= app.project.item(i).layers.length ; j++) {
                     if(app.project.item(i).layer(j) instanceof TextLayer){
-                        TextOut.allText.push(app.project.item(i).layer(j).text.sourceText.value.toString());
+                        TextOut.allText.push(app.project.item(i).layer(j).text.sourceText.value.toString().replace(/(,)/g, '\\$1'));
                     }
                 }
             }
