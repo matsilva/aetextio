@@ -6,10 +6,15 @@
     
     //Get all text layers and replace their source with corresponding value in array
     TextIn.replaceText = function(textArray){
-        for(var i = 1; i <= app.project.numItems ; i++){
-            var b = i-1;
-            if (app.project.item(i) instanceof TextItem) {
-                app.project.item(i).sourceText = textArray[b];
+        var b=0;
+        for (var i = 1; i <= app.project.numItems; i++) {
+            if (app.project.item(i) instanceof CompItem) {
+                for (var j = 1; j <= app.project.item(i).layers.length ; j++) {
+                    if(app.project.item(i).layer(j) instanceof TextLayer){
+                        app.project.item(i).layer(j).text.sourceText.setValue(textArray[b]);
+                        b++;
+                    }
+                }
             }
         }
     };
@@ -22,10 +27,11 @@
         }
         var text;
         while (!textFile.eof){
-            text = myFile.readln();
+            text = textFile.readln();
             if (text == "") text = "\r" ;
         }
-        TextIn.allText = text.split(",");
+        TextIn.allText =text.replace(/([^\\]),/g, '$1\u000B').replace(/\\(,)/g, '$1').split('\u000B');
+        writeLn(TextIn.allText.toString());
         textFile.close();
         callback(TextIn.allText);
     };
